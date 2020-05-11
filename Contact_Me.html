@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    	<link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="description" content="Melvin Mingoa's Portfolio">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript,Melvin,Mingoa,Portfolio,Art,Artist,Painting,Photography,Sculture,Digital Media,">
+        <meta name="author" content="Melvin Mingoa">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Me | Melvin Mingoa</title>  
+        <style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+	</head>
+	<body>
+		<!-- SIDENAV -->
+		<div class="sidenav">
+			<a href="index.html">	
+				<img alt="MelvinMingoa_Logo" src="MelvinMingoa_Logo.png" width="200" height="160"></a>
+		 	<h1>Melvin<br>Mingoa</h1>
+		 	<hr>
+		  	<a href="About.html">About Me</a>
+		  	<a href="Gallery.html">Gallery</a>
+		  	<a href="Contact_Me.html">Contact Me</a>
+		  	<a href="Artist_Statement.html">Artist Statement</a>
+		</div>
+
+			<!-- MAIN (Center website) -->
+		<div class="main">		
+			<h2>Contact Me Form</h2>
+			<hr>
+			<div class="container">
+			  	<form action="/action_page.php">
+			  		<div class="row">
+			    		<div class="col-25">
+			      			<label for="fname">First Name</label>
+			    		</div>
+			    		<div class="col-75">
+			      			<input type="text" id="fname" name="firstname" placeholder="Your name..">
+			    		</div>
+			  		</div>
+			 		<div class="row">
+			   			<div class="col-25">
+			      			<label for="lname">Last Name</label>
+			    		</div>
+			    		<div class="col-75">
+			      		<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+			    		</div>
+			  		</div>
+			 		<div class="row">
+			   			<div class="col-25">
+			      			<label for="lname">Email</label>
+			    		</div>
+			    		<div class="col-75">
+			      		<input type="text" id="Email" name="Email" placeholder="Your Email..">
+			    		</div>
+			  		</div>
+			  		<div class="row">
+			    		<div class="col-25">
+			      			<label for="subject">Subject</label>
+			    		</div>
+			    		<div class="col-75">
+			      		<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+			    		</div>
+			  		</div>
+			  		<div class="row">
+			    		<input type="submit" value="Submit">
+			  		</div>
+			  	</form>
+			</div>
+		</div> <!--END MAIN-->
+				<!-- FOOTER -->
+		<div class="footer">
+			<hr>	
+			<p>Melvin Mingoa</p> 
+			<p>Contact information: 
+		    <a href="mailto:mingoa_melvin@yahoo.com">mingoa_melvin@yahoo.com</a></p>
+		</div>
+
+	</body>
+</html> 
