@@ -1,341 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<meta charset="UTF-8">
-		<meta name="description" content="Melvin Mingoa's Portfolio">
-		<meta name="keywords" content="HTML,CSS,XML,JavaScript,Melvin,Mingoa,Portfolio,Art,Artist,Painting,Photography,Sculture,Digital Media,">
-		<meta name="author" content="Melvin Mingoa">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Gallery | Melvin Mingoa</title>
 
-		<style>
-			* {
-				box-sizing: border-box;
-}
-			body {
-				background-color: white;
-				padding: 20px;
-				font-family: "Times New Roman", sans-serif;
-}
-			h1 {
-			  	font-size: 50px;
-			  	word-break: break-all;
-}
-			 /* Style the Image Used to Trigger the Modal */
-			.myImg {
-			    border-radius: 5px;
-			    cursor: pointer;
-			    transition: 0.3s;
-}
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="description" content="Melvin Mingoa's Portfolio">
+	<meta name="keywords" content="HTML,CSS,XML,JavaScript,Melvin,Mingoa,Portfolio,Art,Artist,Painting,Photography,Sculture,Digital Media,">
+	<meta name="author" content="Melvin Mingoa">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gallery | Melvin Mingoa</title>
 
-			.myImg:hover {opacity: 0.7;}
+	<style>
+		* {
+			box-sizing: border-box;
+		}
 
-			/* The Modal (background) */
-			.modal {
-			    display: none; /* Hidden by default */
-			    position: fixed; /* Stay in place */
-			    z-index: 1; /* Sit on top */
-			    padding-top: 100px; /* Location of the box */
-			    left: 0;
-			    top: 0;
-			    width: 100%; /* Full width */
-			    height: 100%; /* Full height */
-			    overflow: auto; /* Enable scroll if needed */
-			    background-color: rgb(0,0,0); /* Fallback color */
-			    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-			/* Modal Content (Image) */
+		body {
+			background-color: white;
+			padding: 20px;
+			font-family: "Times New Roman", sans-serif;
+		}
+
+		h1 {
+			font-size: 50px;
+			word-break: break-all;
+		}
+
+		/* Style the Image Used to Trigger the Modal */
+		.myImg {
+			border-radius: 5px;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+		.myImg:hover {
+			opacity: 0.7;
+		}
+
+		/* The Modal (background) */
+		.modal {
+			display: none;
+			/* Hidden by default */
+			position: fixed;
+			/* Stay in place */
+			z-index: 1;
+			/* Sit on top */
+			padding-top: 100px;
+			/* Location of the box */
+			left: 0;
+			top: 0;
+			width: 100%;
+			/* Full width */
+			height: 100%;
+			/* Full height */
+			overflow: auto;
+			/* Enable scroll if needed */
+			background-color: rgb(0, 0, 0);
+			/* Fallback color */
+			background-color: rgba(0, 0, 0, 0.9);
+			/* Black w/ opacity */
+		}
+
+		/* Modal Content (Image) */
+		.modal-content {
+			margin: auto;
+			display: block;
+			width: 80%;
+		}
+
+		/* Caption of Modal Image (Image Text) - Same Width as the Image */
+		#caption {
+			margin: auto;
+			display: block;
+			width: 80%;
+			max-width: 700px;
+			text-align: center;
+			color: #ccc;
+			padding: 10px 0;
+			height: 150px;
+		}
+
+		/* Add Animation - Zoom in the Modal */
+		.modal-content,
+		#caption {
+			-webkit-animation-name: zoom;
+			-webkit-animation-duration: 0.6s;
+			animation-name: zoom;
+			animation-duration: 0.6s;
+		}
+
+		@-webkit-keyframes zoom {
+			from {
+				-webkit-transform: scale(0)
+			}
+
+			to {
+				-webkit-transform: scale(1)
+			}
+		}
+
+		@keyframes zoom {
+			from {
+				transform: scale(0)
+			}
+
+			to {
+				transform: scale(1)
+			}
+		}
+
+		/* The Close Button */
+		.close {
+			position: absolute;
+			top: 15px;
+			right: 35px;
+			color: #f1f1f1;
+			font-size: 40px;
+			font-weight: bold;
+			transition: 0.3s;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: #bbb;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		/* 100% Image Width on Smaller Screens */
+		@media only screen and (max-width: 700px) {
 			.modal-content {
-			    margin: auto;
-			    display: block;
-			    width: 80%;
-}
-			/* Caption of Modal Image (Image Text) - Same Width as the Image */
-			#caption {
-			    margin: auto;
-			    display: block;
-			    width: 80%;
-			    max-width: 700px;
-			    text-align: center;
-			    color: #ccc;
-			    padding: 10px 0;
-			    height: 150px;
-}
-			/* Add Animation - Zoom in the Modal */
-			.modal-content, #caption {
-			    -webkit-animation-name: zoom;
-			    -webkit-animation-duration: 0.6s;
-			    animation-name: zoom;
-			    animation-duration: 0.6s;
-}
+				width: 100%;
+			}
+		}
 
-			@-webkit-keyframes zoom {
-			    from {-webkit-transform:scale(0)}
-			    to {-webkit-transform:scale(1)}
-}
-			@keyframes zoom {
-			    from {transform:scale(0)}
-			    to {transform:scale(1)}
-}
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0 4px;
+		}
 
-			/* The Close Button */
-			.close {
-			    position: absolute;
-			    top: 15px;
-			    right: 35px;
-			    color: #f1f1f1;
-			    font-size: 40px;
-			    font-weight: bold;
-			    transition: 0.3s;
-}
-			.close:hover,
-			.close:focus {
-			    color: #bbb;
-			    text-decoration: none;
-			    cursor: pointer;
-}
-			/* 100% Image Width on Smaller Screens */
-			@media only screen and (max-width: 700px){
-			    .modal-content {
-			        width: 100%;
-	}
-}
-			.row {
-  				display: flex;
-  				flex-wrap: wrap;
-  				padding: 0 4px;
-}
-			/* Adds padding BETWEEN each column */
-			.row,
-			.row > .column {
-			  	padding: 8px;
-}
-			/* Create three equal columns that floats next to each other */
-			.column {
-			  	float: left;
-			  	width: 33.33%;
-			  	display: none; /* Hide all elements by default */
-			  	padding: 0 4px;
-}
-			.column img{
-				margin-top: 8px;
-				vertical-align: middle;
-}
-			/* Clear floats after rows */ 
-			.row:after {
-			  	content: "";
-			  	display: flex;
-			  	clear: both;
-}
-			/* Content */
-			.content {
-			  	background-color: #f9f9f9;
-			  	padding: 10px;
-}
-			/* The "show" class is added to the filtered elements */
-			.show {
-			  	display: block;
-}
-			/* Style the buttons */
-			.btn {
-			  	border: none;
-			  	outline: none;
-			  	padding: 12px 16px;
-			  	background-color: white;
-			  	cursor: pointer;
-}
-			.btn:hover {
-			  	background-color: #ddd;
-}
-			.btn.active {
-			  	background-color: #666;
-			  	color: white;
-}
-		</style>
-	</head>
-	<body>
-		<!-- SIDENAV -->
-		<div class="sidenav">
-			<a href="index.html">	
-				<img alt="MelvinMingoa_Logo" src="MelvinMingoa_Logo.png" width="200" height="160"></a>
-		 	<h1>Melvin<br>Mingoa</h1>
-		 	<hr>
-		  	<a href="About.html">About Me</a>
-		  	<a href="Gallery.html">Gallery</a>
-		  	<a href="Contact_Me.html">Contact Me</a>
-		  	<a href="Artist_Statement.html">Artist Statement</a>
+		/* Adds padding BETWEEN each column */
+		.row,
+		.row>.column {
+			padding: 8px;
+		}
+
+		/* Create three equal columns that floats next to each other */
+		.column {
+			float: left;
+			width: 33.33%;
+			display: none;
+			/* Hide all elements by default */
+			padding: 0 4px;
+		}
+
+		.column img {
+			margin-top: 8px;
+			vertical-align: middle;
+		}
+
+		/* Clear floats after rows */
+		.row:after {
+			content: "";
+			display: flex;
+			clear: both;
+		}
+
+		/* Content */
+		.content {
+			background-color: #f9f9f9;
+			padding: 10px;
+		}
+
+		/* The "show" class is added to the filtered elements */
+		.show {
+			display: block;
+		}
+
+		/* Style the buttons */
+		.btn {
+			border: none;
+			outline: none;
+			padding: 12px 16px;
+			background-color: white;
+			cursor: pointer;
+		}
+
+		.btn:hover {
+			background-color: #ddd;
+		}
+
+		.btn.active {
+			background-color: #666;
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- SIDENAV -->
+	<div class="sidenav">
+		<a href="index.html">
+			<img alt="MelvinMingoa_Logo" src="MelvinMingoa_Logo.png" width="200" height="160"></a>
+		<h1>Melvin<br>Mingoa</h1>
+		<hr>
+		<a href="About.html">About Me</a>
+		<a href="Gallery.html">Gallery</a>
+		<a href="Contact_Me.html">Contact Me</a>
+		<a href="Artist_Statement.html">Artist Statement</a>
+	</div>
+	<!-- MAIN (Center website) -->
+	<div class="main">
+		<h2>Gallery</h2>
+		<hr>
+		<div id="myBtnContainer">
+			<button class="btn active" onclick="filterSelection('all')"><b>Show all</b></button>
+			<button class="btn" onclick="filterSelection('Digital_Media')"><b>Digital Media</b></button>
+			<button class="btn" onclick="filterSelection('Sculpture')"><b>Sculpture</b></button>
+			<button class="btn" onclick="filterSelection('Painting')"><b>Painting</b></button>
+			<button class="btn" onclick="filterSelection('Photography')"><b>Photography</b></button>
 		</div>
-		<!-- MAIN (Center website) -->
-		<div class="main">
-			<h2>Gallery</h2>
-			<hr>
-			<div id="myBtnContainer">
-			  <button class="btn active" onclick="filterSelection('all')"><b>Show all</b></button>
-			  <button class="btn" onclick="filterSelection('Digital_Media')"><b>Digital Media</b></button>
-			  <button class="btn" onclick="filterSelection('Sculpture')"><b>Sculpture</b></button>
-			  <button class="btn" onclick="filterSelection('Painting')"><b>Painting</b></button>
-			  <button class="btn" onclick="filterSelection('Photography')"><b>Photography</b></button>
+		<!-- Portfolio Gallery Grid -->
+		<div class="row">
+			<div class="column Digital_Media">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa_Collage.jpg" alt="Digital Media" style="width:100%">
+					<!-- The Modal -->
+					<div id="myModal" class="modal">
+						<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+						<img class="modal-content" id="img01" alt="Image not recognizable" src="MelvinMingoa_Collage">
+						<div id="caption"></div>
+					</div>
+					<h4><i>Copyright Collage</i></h4>
+					<p>My collage that features a collage of many recognizable artwork that are locked behind copyrights use.</p>
+				</div>
 			</div>
-			<!-- Portfolio Gallery Grid -->
-			<div class="row">
-				<div class="column Digital_Media">
-				    <div class="content">
-				      	<img class="myImg" src="MelvinMingoa_Collage.jpg" alt="Digital Media" style="width:100%">
-				      	<!-- The Modal -->
-						<div id="myModal" class="modal">
-							 <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
-							<img class="modal-content" id="img01" alt="Image not recognizable" src="MelvinMingoa_Collage">
-							<div id="caption"></div>
-						</div>
-				     	<h4><i>Copyright Collage</i></h4>
-				     	<p>My collage that features a collage of many recognizable artwork that are locked behind copyrights use.</p>
-				    </div>
-				</div>			
-				<div class="column Digital_Media">
-					<div class="content">
-			    		<img class="myImg" src="MelvinMingoa_GlitchCollage.jpg" alt="Digital Media" style="width:100%">
-			      		<h4><i>Glitched Collage</i></h4>
-			      		<p>A Glitch effect that went over the copyright collage.</p>
-			    	</div>	
+			<div class="column Digital_Media">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa_GlitchCollage.jpg" alt="Digital Media" style="width:100%">
+					<h4><i>Glitched Collage</i></h4>
+					<p>A Glitch effect that went over the copyright collage.</p>
 				</div>
-				<div class="column Digital_Media">
-					<div class="content">
-			    		<img class="myImg" src="MelvinMingoa_Font.png" alt="Digital Media" style="width:100%">
-			      		<h4><i>Font</i></h4>
-			      		<p>An interesting feeling that you get visually and from reading the word.</p>
-			    	</div>
+			</div>
+			<div class="column Digital_Media">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa_Font.png" alt="Digital Media" style="width:100%">
+					<h4><i>Font</i></h4>
+					<p>An interesting feeling that you get visually and from reading the word.</p>
 				</div>
-				<div class="column Digital_Media">
-					<div class="content">
-			    		<img class="myImg" src="MelvinMingoa_SelfPortrait.png" alt="Digital Media" style="width:100%">
-			      		<h4><i>Self Portrait</i></h4>
-			      		<p> A self portrait made from using P5, my first time using it.</p>
-			    	</div>
-			  	</div>
-			    <div class="column Digital_Media">
-			    	<div class="content">
-			    		<img class="myImg" src="MelvinMingoa_Sunset.jpg" alt="Digital Media" style="width:100%">
-			      		<h4><i>Glitch Sunset</i></h4>
-			      		<p>A sunset seen through a glitch.</p>
-			    	</div>
-			  	</div>
-			    <div class="column Digital_Media">
-			    	<div class="content">
-			    		<img class="myImg" src="MingoaMelvin_ButterflyMesh.jpg" alt="Digital Media" style="width:100%">
-			      		<h4><i>Buttery Fly Mesh</i></h4>
-			    		<p>A 3D effect caused by layering and shadows.</p>
-					</div>
+			</div>
+			<div class="column Digital_Media">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa_SelfPortrait.png" alt="Digital Media" style="width:100%">
+					<h4><i>Self Portrait</i></h4>
+					<p> A self portrait made from using P5, my first time using it.</p>
 				</div>
-				<div class="column Digital_Media">
-			    	<div class="content">
-			    		<img class="myImg" src="MelvinMingoa_MeshMixer.png" alt="Digital Media" style="width:100%">
-			    		<h4><i>MeshMixer</i></h4>
-			    		<p>A simple painting on top of the goose model. A nod to the popular "Akatsuki" motif from the anime Naruto.</p>
-			    	</div>
-			  	</div>
-			  	<div class="column Digital_Media">
-			    	<div class="content">
-			    		<img class="myImg" src="MingoaMelvin_MountainGlitch.jpg" alt="Digital Media" style="width:100%">
-			    		<h4><i>Mountain Glitch</i></h4>
-			    		<p>One of many glitches that are always fun to make.</p>
-			    	</div>
-			  	</div>
-			  	<div class="column Digital_Media">
-			    	<div class="content">
-			    		<img class="myImg" src="MelvinMingoa_WebArtNarrative.jpg" alt="Digital Media" style="width:100%">
-			    		<h4><i>Browser Empathy</i></h4>
-			    		<p> A <a href="https://crazyrabbitz007.github.io/">website</a> adressing the relationship of your computer (or your web browser?) with you.</p>
-			    	</div>
-			  	</div>
-				<div class="column Sculpture">
-			    	<div class="content">
-			    		<img class="myImg" src="MelvinMingoa_Boat.png" alt="Sculpture" style="width:100%">
-			    		<h4><i>Sinking</i></h4>
-			    		<p>This is a series of scultures that I made using cement. It was originally inspired after a 3rd party iPhone charger.</p>
-					</div>
+			</div>
+			<div class="column Digital_Media">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa_Sunset.jpg" alt="Digital Media" style="width:100%">
+					<h4><i>Glitch Sunset</i></h4>
+					<p>A sunset seen through a glitch.</p>
 				</div>
-				<div class="column Sculpture">
-			    	<div class="content">
-			    		<img class="myImg" src="MelvinMingoa_Charger.png" alt="Sculpture" style="width:100%">
-			      		<h4><i>Charger</i></h4>
-			      		<p>A cement statue of an iPhone charger with it's parts rearranged.</p>
-			    	</div>
-			  	</div>
-			  	<div class="column Sculpture">
-			    	<div class="content">
-			    		<img class="myImg" src="MelvinMingoa_Cup.png" alt="Sculpture" style="width:100%">
-			      		<h4><i>Ceramic Cup</i></h4>
-			      		<p>A black and white ceramic cup, one of many I made.</p>
-			   		</div>
-			  	 </div>
-			  	<div class="column Painting">
-				    <div class="content">
-				      	<img class="myImg" src="MelvinMingoa_YellowMountain.jpg" alt="Painting" style="width:100%">
-				      	<h4><i>Yellow Mountain</i></h4>
-				      	<p>One of the first of my series "Landscapes of my Mind", where I show paintings that are reminiscent to a real life place, but merge with my imagination.</p>
-			    	</div>
-			  	</div>
-			  	<div class="column Painting">
-			   	 	<div class="content">
-			    		<img  class="myImg" src="MelvinMingoa_DreamSea.jpg" alt="Painting" style="width:100%">
-					    <h4><i>Dream Sea</i></h4>
-					    <p> Another scene inspired by the dreams of an insomiac.</p>
-			    	</div>
-			  	</div>
-			  	<div class="column Painting">
-			    	<div class="content">
-			    		<img class="myImg" src="MelvinMingoa_PinkSunset.jpg" alt="Painting" style="width:100%">
-			      		<h4><i>Pink Sunset</i></h4>
-			      		<p> These clouds don't look real, but what is a real cloud when no cloud ever has the same form?</p>
-			    	</div>
-			  	</div>
-			  	<div class="column Photography">
-			    	<div class="content">
-			      		<img class="myImg" src="MelvinMingoa_Victor-1.jpg" alt="Photography" style="width:100%">
-			      		<h4><i>Victor</i></h4>
-			      		<p>One of my first action shots, with my good friend,neighbor, and homeroom buddy, Victor. </p>
-			    	</div>
-			  	</div>
-			  	<div class="column Photography">
-			    	<div class="content">
-			      		<img class="myImg" src="MelvinMingoa-Ed-1.jpg" alt="Photography" style="width:100%">
-			      		<h4><i>Ed</i></h4>
-			      		<p>A headshot I took for the upcoming actor Ed Soria.</p>
-			    	</div>
-			  	</div>
-			  	<div class="column Photography">
-			    	<div class="content">
-			      		<img class="myImg" src="MelvinMingoa_Diana-1.jpg" alt="Photography" style="width:100%">
-			      		<h4><i>Diana</i></h4>
-			      		<p>The sihouette of a person can define them, but sometimes it can be the other way</p>
-			    	</div>
-			  	</div>
+			</div>
+			<div class="column Digital_Media">
+				<div class="content">
+					<img class="myImg" src="MingoaMelvin_ButterflyMesh.jpg" alt="Digital Media" style="width:100%">
+					<h4><i>Buttery Fly Mesh</i></h4>
+					<p>A 3D effect caused by layering and shadows.</p>
+				</div>
+			</div>
+			<div class="column Digital_Media">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa_MeshMixer.png" alt="Digital Media" style="width:100%">
+					<h4><i>MeshMixer</i></h4>
+					<p>A simple painting on top of the goose model. A nod to the popular "Akatsuki" motif from the anime Naruto.</p>
+				</div>
+			</div>
+			<div class="column Digital_Media">
+				<div class="content">
+					<img class="myImg" src="MingoaMelvin_MountainGlitch.jpg" alt="Digital Media" style="width:100%">
+					<h4><i>Mountain Glitch</i></h4>
+					<p>One of many glitches that are always fun to make.</p>
+				</div>
+			</div>
+			<div class="column Digital_Media">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa_WebArtNarrative.jpg" alt="Digital Media" style="width:100%">
+					<h4><i>Browser Empathy</i></h4>
+					<p> A <a href="https://crazyrabbitz007.github.io/">website</a> adressing the relationship of your computer (or your web browser?) with you.</p>
+				</div>
+			</div>
+			<div class="column Sculpture">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa_Boat.png" alt="Sculpture" style="width:100%">
+					<h4><i>Sinking</i></h4>
+					<p>This is a series of scultures that I made using cement. It was originally inspired after a 3rd party iPhone charger.</p>
+				</div>
+			</div>
+			<div class="column Sculpture">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa_Charger.png" alt="Sculpture" style="width:100%">
+					<h4><i>Charger</i></h4>
+					<p>A cement statue of an iPhone charger with it's parts rearranged.</p>
+				</div>
+			</div>
+			<div class="column Sculpture">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa_Cup.png" alt="Sculpture" style="width:100%">
+					<h4><i>Ceramic Cup</i></h4>
+					<p>A black and white ceramic cup, one of many I made.</p>
+				</div>
+			</div>
+			<div class="column Painting">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa_YellowMountain.jpg" alt="Painting" style="width:100%">
+					<h4><i>Yellow Mountain</i></h4>
+					<p>One of the first of my series "Landscapes of my Mind", where I show paintings that are reminiscent to a real life place, but merge with my imagination.</p>
+				</div>
+			</div>
+			<div class="column Painting">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa_DreamSea.jpg" alt="Painting" style="width:100%">
+					<h4><i>Dream Sea</i></h4>
+					<p> Another scene inspired by the dreams of an insomiac.</p>
+				</div>
+			</div>
+			<div class="column Painting">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa_PinkSunset.jpg" alt="Painting" style="width:100%">
+					<h4><i>Pink Sunset</i></h4>
+					<p> These clouds don't look real, but what is a real cloud when no cloud ever has the same form?</p>
+				</div>
+			</div>
+			<div class="column Photography">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa_Victor-1.jpg" alt="Photography" style="width:100%">
+					<h4><i>Victor</i></h4>
+					<p>One of my first action shots, with my good friend,neighbor, and homeroom buddy, Victor. </p>
+				</div>
+			</div>
+			<div class="column Photography">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa-Ed-1.jpg" alt="Photography" style="width:100%">
+					<h4><i>Ed</i></h4>
+					<p>A headshot I took for the upcoming actor Ed Soria.</p>
+				</div>
+			</div>
+			<div class="column Photography">
+				<div class="content">
+					<img class="myImg" src="MelvinMingoa_Diana-1.jpg" alt="Photography" style="width:100%">
+					<h4><i>Diana</i></h4>
+					<p>The sihouette of a person can define them, but sometimes it can be the other way</p>
+				</div>
+			</div>
 
-			  	<div class="column Digital Media">
-			    	<div class="content">
+			<div class="column Digital Media">
+				<div class="content">
 
 					<video width="400" controls>
-					          <video width="400"height="240" autoplay>
-					          <source src="Hyper Reality.avi" type="video/mp4" style="width:25%;">
-					          <source src="Summer_Forest.ogg" type="video/ogg" style="width:25%;">
-					            Your browser does not support HTML5 video.
-					</video>
-			      		<h4>Diana</h4>
-			      		<p>The sihouette of a person can define them, but sometimes it can be the other way</p>
-			    	</div>
-			  	</div>
+						<video width="400" height="240" autoplay>
+							<source src="Hyper Reality.avi" type="video/mp4" style="width:25%;">
+							<source src="Summer_Forest.ogg" type="video/ogg" style="width:25%;">
+							Your browser does not support HTML5 video.
+						</video>
+						<h4>Diana</h4>
+						<p>The sihouette of a person can define them, but sometimes it can be the other way</p>
+				</div>
+			</div>
 
-			</div> <!-- END GRID -->
-		</div> <!-- END MAIN -->
-		<div class="footer">
-			<hr>
-			<p>Melvin Mingoa</p>
-			<p>Contact information: 
-			<a href="mailto:mingoa_melvin@yahoo.com">mingoa_melvin@yahoo.com</a></p>
-		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script>
+		</div> <!-- END GRID -->
+	</div> <!-- END MAIN -->
+	<div class="footer">
+		<hr>
+		<p>Melvin Mingoa</p>
+		<p>Contact information:
+			<a href="mailto:mingoa_melvin@yahoo.com">mingoa_melvin@yahoo.com</a>
+		</p>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script>
 		// Modal Script //
 		// Get the modal
 		var modal = document.getElementById('myModal');
@@ -343,65 +388,70 @@
 		var img = $('.myImg');
 		var modalImg = $("#img01");
 		var captionText = document.getElementById("caption");
-		$('.myImg').click(function(){
-		    modal.style.display = "block";
-		    var newSrc = this.src;
-		    modalImg.attr('src', newSrc);
-		    captionText.innerHTML = this.alt;
+		$('.myImg').click(function() {
+			modal.style.display = "block";
+			var newSrc = this.src;
+			modalImg.attr('src', newSrc);
+			captionText.innerHTML = this.alt;
 		});
 		// Get the <span> element that closes the modal
 		var span = document.getElementsByClassName("close")[0];
 		// When the user clicks on <span> (x), close the modal
 		span.onclick = function() {
-		  modal.style.display = "none";
+			modal.style.display = "none";
 		}
-	    //IMAGE COLUMN//
+		//IMAGE COLUMN//
 		function three() {
-		    for (i = 0; i < elements.length; i++) {
-		    elements[i].style.msFlex = "100%";  // IE10
-		    elements[i].style.flex = "100%";
-		  }
+			for (i = 0; i < elements.length; i++) {
+				elements[i].style.msFlex = "100%"; // IE10
+				elements[i].style.flex = "100%";
+			}
 		}
 		//button script//
 		filterSelection("all")
+
 		function filterSelection(c) {
-		  var x, i;
-		  x = document.getElementsByClassName("column");
-		  if (c == "all") c = "";
-		  for (i = 0; i < x.length; i++) {
-		    w3RemoveClass(x[i], "show");
-		    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-		  }
+			var x, i;
+			x = document.getElementsByClassName("column");
+			if (c == "all") c = "";
+			for (i = 0; i < x.length; i++) {
+				w3RemoveClass(x[i], "show");
+				if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+			}
 		}
+
 		function w3AddClass(element, name) {
-		  var i, arr1, arr2;
-		  arr1 = element.className.split(" ");
-		  arr2 = name.split(" ");
-		  for (i = 0; i < arr2.length; i++) {
-		    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-		  }
+			var i, arr1, arr2;
+			arr1 = element.className.split(" ");
+			arr2 = name.split(" ");
+			for (i = 0; i < arr2.length; i++) {
+				if (arr1.indexOf(arr2[i]) == -1) {
+					element.className += " " + arr2[i];
+				}
+			}
 		}
+
 		function w3RemoveClass(element, name) {
-		  var i, arr1, arr2;
-		  arr1 = element.className.split(" ");
-		  arr2 = name.split(" ");
-		  for (i = 0; i < arr2.length; i++) {
-		    while (arr1.indexOf(arr2[i]) > -1) {
-		      arr1.splice(arr1.indexOf(arr2[i]), 1);     
-		    }
-		  }
-		  element.className = arr1.join(" ");
+			var i, arr1, arr2;
+			arr1 = element.className.split(" ");
+			arr2 = name.split(" ");
+			for (i = 0; i < arr2.length; i++) {
+				while (arr1.indexOf(arr2[i]) > -1) {
+					arr1.splice(arr1.indexOf(arr2[i]), 1);
+				}
+			}
+			element.className = arr1.join(" ");
 		}
 		// Add active class to the current button (highlight it)
 		var btnContainer = document.getElementById("myBtnContainer");
 		var btns = btnContainer.getElementsByClassName("btn");
 		for (var i = 0; i < btns.length; i++) {
-		  btns[i].addEventListener("click", function(){
-		    var current = document.getElementsByClassName("active");
-		    current[0].className = current[0].className.replace(" active", "");
-		    this.className += " active";
-		  });
+			btns[i].addEventListener("click", function() {
+				var current = document.getElementsByClassName("active");
+				current[0].className = current[0].className.replace(" active", "");
+				this.className += " active";
+			});
 		}
-		</script>
+	</script>
 
 </html>
