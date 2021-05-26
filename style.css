@@ -9,11 +9,14 @@
 
 			h2 {
 				font-family: "Verdana", sans-serif;
+				text-align: center;
 			}
 
 			body {
 			  font-family: "Verdana", sans-serif;
 			  padding: 20px;
+				text-indent: 25px;
+				line-height: 1.5;
 			}
 
 			.sidenav {
@@ -28,6 +31,7 @@
 			  padding-top: 100px;
 			  padding-left: 20px;
 			  padding-right: 20px;
+				text-align:left;
 			}
 
 			.sidenav a {
